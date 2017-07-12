@@ -15,7 +15,13 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
 var configDB = require('./config/database.js');
+//var facebookApiId = process.env.apiKey;
 
+var env = process.env;
+var facebookAppId = (env.FACEBOOK_APP_ID);
+var facebookAppSecret = (env.FACEBOOK_APP_SECRET);
+//const dbName = '/tadejp';
+//const dbURL = (env.OPENSHIFT_MONGODB_DB_HOST) ? (env.OPENSHIFT_MONGODB_DB_USERNAME + ':' +env.OPENSHIFT_MONGODB_DB_PASSWORD+ '@' + env.OPENSHIFT_MONGODB_DB_HOST +':'+env.OPENSHIFT_MONGODB_DB_PORT+dbName ) : 'localhost:27017'+dbName;
 // configuration ===============================================================
 mongoose.connect(configDB.url); // connect to our database
 
@@ -45,3 +51,5 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 // launch ======================================================================
 app.listen(port);
 console.log('The magic happens on port ' + port);
+console.log('ENV FACEBOOK_APP_ID =' + facebookAppId);
+console.log('ENV FACEBOOK_APP_SECRET =' + facebookAppSecret);
