@@ -1,11 +1,16 @@
 // config/auth.js
 
 // expose our config directly to our application using module.exports
+const env = process.env;
+const facebookAppId = (env.FACEBOOK_APP_ID);
+const facebookAppSecret = (env.FACEBOOK_APP_SECRET);
+console.log('auth.js: ENV FACEBOOK_APP_ID =' + facebookAppId);
+console.log('auth.js: ENV FACEBOOK_APP_SECRET =' + facebookAppSecret);
 module.exports = {
 
     'facebookAuth' : {
-        'clientID'        : 'facebookAppId', // your App ID
-        'clientSecret'    : 'facebookAppSecret', // your App Secret
+        'clientID'        : facebookAppId, // your App ID
+        'clientSecret'    : facebookAppSecret, // your App Secret
         'callbackURL'     : 'http://localhost:8080/auth/facebook/callback',
         'profileURL': 'https://graph.facebook.com/v2.5/me?fields=first_name,last_name,email'
 
