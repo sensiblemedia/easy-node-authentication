@@ -17,9 +17,9 @@ var session      = require('express-session');
 var configDB = require('./config/database.js');
 //var facebookApiId = process.env.apiKey;
 
-var env = process.env;
-var facebookAppId = (env.FACEBOOK_APP_ID);
-var facebookAppSecret = (env.FACEBOOK_APP_SECRET);
+const env = process.env;
+const facebookAppId = (env.FACEBOOK_APP_ID);
+const facebookAppSecret = (env.FACEBOOK_APP_SECRET);
 //const dbName = '/tadejp';
 //const dbURL = (env.OPENSHIFT_MONGODB_DB_HOST) ? (env.OPENSHIFT_MONGODB_DB_USERNAME + ':' +env.OPENSHIFT_MONGODB_DB_PASSWORD+ '@' + env.OPENSHIFT_MONGODB_DB_HOST +':'+env.OPENSHIFT_MONGODB_DB_PORT+dbName ) : 'localhost:27017'+dbName;
 // configuration ===============================================================
